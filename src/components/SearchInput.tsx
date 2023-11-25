@@ -10,11 +10,12 @@ const SearchInput = () => {
   const { users, loadUsers } = useContext(UserContext) as UserContextType;
 
   const fetchData = () => {
+    console.log(process.env.REACT_APP_GITHUB_KEY);
     fetch(
       `https://api.github.com/search/users?q=${searchQuery} in:login&page=1&per_page=5`,
       {
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: `Bearer ${process.env.REACT_APP_GITHUB_KEY}`,
         },
       }
     )

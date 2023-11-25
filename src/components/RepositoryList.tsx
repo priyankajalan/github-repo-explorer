@@ -32,7 +32,9 @@ const RepositoryList = (props: RepositoryProps) => {
   return (
     <ListGroup as="ul" className="mt-3">
       {props.user && props.user.repos && props.user.repos.length ? (
-        props.user.repos.map((repo) => <RepositoryItem repo={repo} />)
+        props.user.repos.map((repo) => (
+          <RepositoryItem key={repo.id} repo={repo} />
+        ))
       ) : (
         <p>no repositories found</p>
       )}
