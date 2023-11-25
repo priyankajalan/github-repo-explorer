@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useEffect, useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import RepositoryItem from "./RepositoryItem";
 import { UserContext } from "../context/userContext";
@@ -12,19 +12,23 @@ interface RepositoryProps {
 const RepositoryList = (props: RepositoryProps) => {
   const { updateUser } = useContext(UserContext) as UserContextType;
 
-  React.useEffect(() => {
-    fetch(`https://api.github.com/users/${props.userLogin}/repos`)
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${props.userLogin}/repos`, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_GITHUB_KEY}`,
+      },
+    })
       .then((response) => response.json())
-      .then((repos) => {
+      .then((repos: IRepo[]) => {
         const fetchedRepos =
-          repos &&
-          repos.length &&
-          repos.map((repo: IRepo) => ({
-            id: repo.id,
-            name: repo.name,
-            description: repo.description,
-            stargazers_count: repo.stargazers_count,
-          }));
+          repos && repos.length
+            ? repos.map((repo: IRepo) => ({
+                id: repo.id,
+                name: repo.name,
+                description: repo.description,
+                stargazers_count: repo.stargazers_count,
+              }))
+            : [];
         updateUser(props.userLogin, fetchedRepos);
       });
   }, [props.userLogin]);
@@ -32,7 +36,7 @@ const RepositoryList = (props: RepositoryProps) => {
   return (
     <ListGroup as="ul" className="mt-3">
       {props.user && props.user.repos && props.user.repos.length ? (
-        props.user.repos.map((repo) => (
+        props.user.repos.map((repo: IRepo) => (
           <RepositoryItem key={repo.id} repo={repo} />
         ))
       ) : (

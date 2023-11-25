@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -10,7 +10,6 @@ const SearchInput = () => {
   const { users, loadUsers } = useContext(UserContext) as UserContextType;
 
   const fetchData = () => {
-    console.log(process.env.REACT_APP_GITHUB_KEY);
     fetch(
       `https://api.github.com/search/users?q=${searchQuery} in:login&page=1&per_page=5`,
       {
@@ -41,7 +40,12 @@ const SearchInput = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </Form.Group>
-      <Button as="button" variant="primary" onClick={() => fetchData()}>
+      <Button
+        as="button"
+        variant="primary"
+        onClick={() => fetchData()}
+        disabled={!searchQuery}
+      >
         <strong>Search</strong>
       </Button>
       {users && searchQuery && (

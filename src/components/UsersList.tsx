@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import UserItem from "./UserItem";
 
@@ -11,11 +11,14 @@ const UsersList = () => {
   if (!users) {
     return <p>Start searching user information and their repos</p>;
   }
+
   return (
     <Accordion>
       {users && users.length !== 0 ? (
         users.map((user) => {
-          return <UserItem key={user.id} userIndex={user.login} user={user} />;
+          return (
+            <UserItem key={user?.id} userIndex={user?.login} user={user} />
+          );
         })
       ) : (
         <p>no users found</p>
