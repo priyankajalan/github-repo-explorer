@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import SearchInput from "./components/SearchInput";
+import UsersList from "./components/UsersList";
+import UserProvider from "./context/userContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <div style={{ width: "60%", margin: "auto" }} className="mt-5">
+        <h1 className="mb-4">Github Users</h1>
+        <SearchInput />
+        <UsersList />
+      </div>
+    </UserProvider>
   );
 }
 
