@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import RepositoryItem from "./RepositoryItem";
-import { UserContext } from "../context/userContext";
-import { IRepo, IUser, UserContextType } from "../@types/user";
+import RepositoryItem from "../RepositoryItem/RepositoryItem";
+import { UserContext } from "../../context/userContext";
+import { IRepo, IUser, UserContextType } from "../../@types/user";
 
 interface RepositoryProps {
   userLogin: string;

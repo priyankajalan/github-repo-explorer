@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import RepositoryItem from "./RepositoryItem";
+import RepositoryItem from "../RepositoryItem";
 
 const RepoProp = {
   id: 61774518,

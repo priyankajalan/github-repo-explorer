@@ -1,7 +1,7 @@
 import { render, screen, act, fireEvent } from "@testing-library/react";
 
-import SearchInput from "./SearchInput";
-import UserProvider from "../context/userContext";
+import SearchInput from "../SearchInput";
+import UserProvider from "../../../context/userContext";
 
 const usersListResponse = {
   total_count: 4,

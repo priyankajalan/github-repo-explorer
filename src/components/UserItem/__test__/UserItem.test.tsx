@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import UserItem from "./UserItem";
-import UserProvider from "../context/userContext";
+import UserItem from "../UserItem";
+import UserProvider from "../../../context/userContext";
 
 const UserProp = {
   login: "priyankajalan",

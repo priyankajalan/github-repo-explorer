@@ -1,7 +1,7 @@
 import React from "react";
 
-import SearchInput from "./components/SearchInput";
-import UsersList from "./components/UsersList";
+import SearchInput from "./components/SearchInput/SearchInput";
+import UsersList from "./components/UsersList/UsersList";
 import UserProvider from "./context/userContext";
 
 function App() {

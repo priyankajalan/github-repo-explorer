@@ -1,6 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
-import RepositoryList from "./RepositoryList";
-import { IUser } from "../@types/user";
+import RepositoryList from "../RepositoryList/RepositoryList";
+import { IUser } from "../../@types/user";
 
 interface UserItemProps {
   userIndex: string;

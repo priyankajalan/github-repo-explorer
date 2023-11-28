@@ -3,7 +3,7 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { IRepo } from "../@types/user";
+import { IRepo } from "../../@types/user";
 
 interface RepositoryItemProps {
   repo: IRepo;

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import RepositoryList from "./RepositoryList";
-import UserProvider from "../context/userContext";
+import RepositoryList from "../RepositoryList";
+import UserProvider from "../../../context/userContext";
 
 const UserInfo = {
   login: "priyankajalan",

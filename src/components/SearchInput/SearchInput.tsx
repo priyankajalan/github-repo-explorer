@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import { UserContext } from "../context/userContext";
-import { UserContextType, IUser } from "../@types/user";
+import { UserContext } from "../../context/userContext";
+import { UserContextType, IUser } from "../../@types/user";
 
 const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState("");

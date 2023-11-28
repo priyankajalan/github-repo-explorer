@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import UserItem from "./UserItem";
+import UserItem from "../UserItem/UserItem";
 
-import { UserContext } from "../context/userContext";
-import { UserContextType } from "../@types/user";
+import { UserContext } from "../../context/userContext";
+import { UserContextType } from "../../@types/user";
 
 const UsersList = () => {
   const { users } = useContext(UserContext) as UserContextType;
